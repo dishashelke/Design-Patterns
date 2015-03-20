@@ -1,5 +1,6 @@
 import static org.junit.Assert.*;
 
+import java.util.ConcurrentModificationException;
 import java.util.ListIterator;
 import java.util.NoSuchElementException;
 
@@ -61,6 +62,13 @@ public class LinkedListTest {
 	@Test(expected = NoSuchElementException.class)
 	public void testGetByInvalidIndex() {
 		students.get(8);
+	}
+	
+	@Test(expected = ConcurrentModificationException.class)
+	public void testModifiedCollection(){
+		ListIterator<Student> iterator = students.listIterator();
+		students.add(new Student("Maya", 845394475l, 3.8f));
+		iterator.next();
 	}
 
 	@Test

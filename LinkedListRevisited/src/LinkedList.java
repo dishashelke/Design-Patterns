@@ -10,15 +10,18 @@ public class LinkedList<T> implements List<T> {
 	private Node<T> head;
 	private Node<T> tail;
 	Comparator<T> comparator;
+	int modCount;
 
 	public LinkedList(Comparator<T> c) {
 		head = tail = new NullNode<T>();
 		comparator = c;
+		modCount = 0;
 	}
 
 	public LinkedList(T data, Comparator<T> c) {
 		head = tail = new DataNode<T>(data);
 		comparator = c;
+		modCount = 0;
 	}
 
 	private boolean insertFirst(T data) {
@@ -54,6 +57,7 @@ public class LinkedList<T> implements List<T> {
 
 	@Override
 	public boolean add(T data) {
+		modCount++;
 		if (isEmpty()) {
 			head = tail = new DataNode<T>(data);
 			return true;
@@ -117,11 +121,11 @@ public class LinkedList<T> implements List<T> {
 
 	@Override
 	public Iterator<T> iterator() {
-		return new LinkedListIterator<T>(head);
+		return new LinkedListIterator<T>(head, modCount, this);
 	}
 
 	public ListIterator<T> reverseIterator() {
-		return new LinkedListIterator<T>(tail);
+		return new LinkedListIterator<T>(tail, modCount, this);
 	}
 
 	@Override
@@ -131,7 +135,7 @@ public class LinkedList<T> implements List<T> {
 
 	@Override
 	public ListIterator<T> listIterator() {
-		return new LinkedListIterator<T>(head);
+		return new LinkedListIterator<T>(head, modCount, this);
 	}
 
 	@Override
