@@ -1,13 +1,15 @@
 import java.util.Hashtable;
 
 public class Context {
-	Turtle SDSU_Turtle;
+	private Turtle SDSU_Turtle;
+	private Hashtable<String, Integer> values = new Hashtable<String, Integer>();
 
 	Context() {
 		SDSU_Turtle = new Turtle();
 	}
-
-	Hashtable<String, Integer> values = new Hashtable<String, Integer>();
+	public Turtle turtle(){
+		return SDSU_Turtle;
+	}
 
 	public int getValue(String variableName) {
 		return values.get(variableName);

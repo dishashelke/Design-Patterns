@@ -11,8 +11,8 @@ public class DoubleExpression implements Expression {
 	@Override
 	public Object evaluate(Context values) {
 		firstPart.evaluate(values);
-		nextPart.equals(values);
-		return null;
+		nextPart.evaluate(values);
+		return true;
 	}
 
 	public String toString() {

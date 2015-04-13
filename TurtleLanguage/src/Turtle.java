@@ -6,7 +6,7 @@ public class Turtle {
 	private Point2D location;
 	private boolean penUp;
 	
-	Turtle(){
+	public Turtle(){
 		location = new Point2D.Double(0,0);
 		penUp = false;// pen is down
 		direction = 0;
@@ -22,7 +22,7 @@ public class Turtle {
 		if(isPenUp())
 			drawLine(oldLocation, location);
 	}
-	protected void drawLine(Point2D start, Point2D end){
+	private void drawLine(Point2D start, Point2D end){
 		
 	}
 	public void turn(int degrees){

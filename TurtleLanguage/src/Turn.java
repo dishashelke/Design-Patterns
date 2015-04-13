@@ -9,7 +9,7 @@ public class Turn implements Expression {
 	@Override
 	public Object evaluate(Context values) {
 		int degrees = (Integer) parameter.evaluate(values);
-		values.SDSU_Turtle.turn(degrees);
+		values.turtle().turn(degrees);
 		return true;
 	}
 

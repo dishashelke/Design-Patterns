@@ -2,7 +2,7 @@ public class PenDown implements Expression {
 
 	@Override
 	public Object evaluate(Context values) {
-		(values.SDSU_Turtle).penDown();
+		(values.turtle()).penDown();
 		return true;
 	}
 

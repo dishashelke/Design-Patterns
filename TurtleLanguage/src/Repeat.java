@@ -1,20 +1,24 @@
-
-public class Repeat implements Expression{
+public class Repeat implements Expression {
 
 	private Expression counter;
 	private Expression statement;
-	public Repeat(Expression counter, Expression statement){
+
+	public Repeat(Expression counter, Expression statement) {
 		this.counter = counter;
 		this.statement = statement;
 	}
+
 	@Override
 	public Object evaluate(Context values) {
-		for(int i = 0 ; i < Integer.valueOf(counter.toString()) ; i++)
+		int parameter = (Integer) counter.evaluate(values);
+		for (int i = 0; i < parameter; i++)
 			statement.evaluate(values);
 		return true;
 	}
-	public String toString(){
-		return "\nrepeat"+counter.toString()+statement.toString()+"\nend";
+
+	public String toString() {
+		return "\nrepeat" + counter.toString() + "\n\t" + statement.toString()
+				+ "\nend";
 	}
 
 }

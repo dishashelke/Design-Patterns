@@ -9,7 +9,7 @@ public class Move implements Expression {
 	@Override
 	public Object evaluate(Context values) {
 		int distance = (Integer) parameter.evaluate(values);
-		values.SDSU_Turtle.move(distance);
+		values.turtle().move(distance);
 		return true;
 	}
 

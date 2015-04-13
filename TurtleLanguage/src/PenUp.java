@@ -3,7 +3,7 @@ public class PenUp implements Expression{
 
 	@Override
 	public Object evaluate(Context values) {
-		values.SDSU_Turtle.penUp();
+		values.turtle().penUp();
 		return true;
 	}
 	

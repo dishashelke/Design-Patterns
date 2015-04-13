@@ -2,7 +2,8 @@
 public class Variable implements Expression {
 
 	private String name;
-//private Variable??
+
+	// private Variable??
 	public Variable(String name) {
 		this.name = name;
 	}
