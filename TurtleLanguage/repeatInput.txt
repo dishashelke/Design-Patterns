@@ -1,7 +1,7 @@
 $k = 3
 $length = 10
 $angle = 90
-repeat $k
+repeat 3
 	move $length
 	turn $angle
 end

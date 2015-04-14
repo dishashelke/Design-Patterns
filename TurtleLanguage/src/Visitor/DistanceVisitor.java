@@ -64,7 +64,11 @@ public class DistanceVisitor extends Visitor {
 
 	@Override
 	public void visitRepeat(Repeat expression) {
-
+		int counter = expression.counter(values);
+		for (int i = 0; i < counter; i++) {
+			Expression statement = expression.statement();
+			statement.accept(this);
+		}
 	}
 
 	@Override

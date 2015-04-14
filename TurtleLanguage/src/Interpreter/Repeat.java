@@ -11,11 +11,12 @@ public class Repeat implements Expression {
 		this.counter = counter;
 		this.statement = statement;
 	}
-	//these getters are used in commond pattern remove if not used 
-	public int counter(Context values){
+
+	public int counter(Context values) {
 		return (Integer) counter.evaluate(values);
 	}
-	public Expression statement(){
+
+	public Expression statement() {
 		return statement;
 	}
 
@@ -27,10 +28,12 @@ public class Repeat implements Expression {
 		return true;
 	}
 
+	@Override
 	public String toString() {
 		return "\nrepeat" + counter.toString() + "\n\t" + statement.toString()
 				+ "\nend";
 	}
+
 	@Override
 	public void accept(Visitor visitor) {
 		visitor.visitRepeat(this);

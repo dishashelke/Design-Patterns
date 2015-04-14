@@ -1,4 +1,5 @@
 move 10
 turn 90
 move 20
-penDown
+turn -90
+turn 30

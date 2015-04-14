@@ -1,28 +1,26 @@
 package Command;
 
 import Interpreter.Context;
-import Interpreter.Expression;
 import Interpreter.PenDown;
 import Interpreter.PenUp;
 
-public class PenUpCommand implements ExpressionCommand{
-	Expression expression;
-	public PenUpCommand(PenUp expression){
+public class PenUpCommand implements ExpressionCommand {
+
+	private PenUp expression;
+
+	public PenUpCommand(PenUp expression) {
 		this.expression = expression;
 	}
+
 	@Override
 	public Object undo(Context values) {
-		//values.turtle().penDown();
-		expression = new PenDown();
-		expression.evaluate(values);
-		return true;
+		PenDown penDownExpression = new PenDown();
+		return penDownExpression.evaluate(values);
 	}
 
 	@Override
 	public Object evaluate(Context values) {
-		//values.turtle().penUp();
-		expression.evaluate(values);
-		return true;
+		return expression.evaluate(values);
 	}
 
 }

@@ -6,7 +6,6 @@ public class Variable implements Expression {
 
 	private String name;
 
-	// private Variable??
 	public Variable(String name) {
 		this.name = name;
 	}
@@ -16,6 +15,7 @@ public class Variable implements Expression {
 		return values.getValue(name);
 	}
 
+	@Override
 	public String toString() {
 		return name;
 	}

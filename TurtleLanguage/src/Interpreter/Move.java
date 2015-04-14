@@ -9,8 +9,8 @@ public class Move implements Expression {
 	public Move(Expression parameter) {
 		this.parameter = parameter;
 	}
-	//added getter to use in DistanceVisitor 
-	public Expression parameter(){
+
+	public Expression parameter() {
 		return parameter;
 	}
 
@@ -21,6 +21,7 @@ public class Move implements Expression {
 		return true;
 	}
 
+	@Override
 	public String toString() {
 		return "move" + parameter.toString();
 	}

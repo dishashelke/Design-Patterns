@@ -63,7 +63,7 @@ public class Parser {
 			firstPart = new Turn(parameter);
 		} else if (command.equalsIgnoreCase("penUp")) {
 			firstPart = new PenUp();
-		} else if (command == "penDown") {
+		} else if (command.equalsIgnoreCase("penDown")) {
 			firstPart = new PenDown();
 		} else if (command.startsWith("$")) {
 			String variable = command;// .substring(1);
@@ -127,7 +127,5 @@ public class Parser {
 			}
 
 	}
-
-	// write test to test invalid expr
 
 }

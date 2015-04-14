@@ -2,18 +2,12 @@ package Command;
 
 import Interpreter.Constant;
 import Interpreter.Context;
-import Interpreter.Expression;
 
 public class ConstantCommand implements ExpressionCommand {
 
-	//private int value;
-	private Expression expression;
+	private Constant expression;
 
-	/*public ConstantCommand(int value) {
-		this.value = value;
-		//expression = new Constant(value);
-	}*/
-	public ConstantCommand(Constant expression){
+	public ConstantCommand(Constant expression) {
 		this.expression = expression;
 	}
 
@@ -24,7 +18,6 @@ public class ConstantCommand implements ExpressionCommand {
 
 	@Override
 	public Object evaluate(Context values) {
-		//return value;
 		return expression.evaluate(values);
 	}
 

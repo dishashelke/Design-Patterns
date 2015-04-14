@@ -9,8 +9,8 @@ public class Turn implements Expression {
 	public Turn(Expression parameter) {
 		this.parameter = parameter;
 	}
-	//getter is added for undo of Turncommand
-	public Expression parameter(){
+
+	public Expression parameter() {
 		return parameter;
 	}
 
@@ -21,6 +21,7 @@ public class Turn implements Expression {
 		return true;
 	}
 
+	@Override
 	public String toString() {
 		return "turn" + parameter.toString();
 	}

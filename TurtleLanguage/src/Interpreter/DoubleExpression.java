@@ -11,11 +11,12 @@ public class DoubleExpression implements Expression {
 		this.firstPart = firstPart;
 		this.nextPart = nextPart;
 	}
-	//added these getters to implement undo in command
-	public Expression firstPart(){
+
+	public Expression firstPart() {
 		return firstPart;
 	}
-	public Expression nextPart(){
+
+	public Expression nextPart() {
 		return nextPart;
 	}
 
@@ -26,6 +27,7 @@ public class DoubleExpression implements Expression {
 		return true;
 	}
 
+	@Override
 	public String toString() {
 		return firstPart.toString() + nextPart.toString();
 	}

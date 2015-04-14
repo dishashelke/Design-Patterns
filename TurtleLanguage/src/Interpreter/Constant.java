@@ -15,6 +15,7 @@ public class Constant implements Expression {
 		return value;
 	}
 
+	@Override
 	public String toString() {
 		return String.valueOf(value);
 	}
